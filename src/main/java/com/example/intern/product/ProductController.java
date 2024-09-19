@@ -1,10 +1,12 @@
 package com.example.intern.product;
 
 
+
 import com.example.intern.product.model.Product;
 import com.example.intern.product.model.ProductDTO;
 import com.example.intern.product.model.UpdateProductCommand;
 import com.example.intern.product.services.*;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,16 +21,19 @@ public class ProductController {
     private final UpdateProductService updateProductService;
     private final GetProductsService getProductsService;
     private final GetProductService getProductService;
+    private final SearchProductService searchProductService;
     public ProductController(CreateProductService createProductService,
                              DeleteProductService deleteProductService,
                              UpdateProductService updateProductService,
                              GetProductsService getProductsService,
-                             GetProductService getProductService) {
+                             GetProductService getProductService,
+                             SearchProductService searchProductService) {
         this.createProductService = createProductService;
         this.deleteProductService = deleteProductService;
         this.updateProductService = updateProductService;
         this.getProductsService = getProductsService;
         this.getProductService=getProductService;
+        this.searchProductService=searchProductService;
     }
 
 
@@ -55,4 +60,11 @@ public class ProductController {
     public ResponseEntity<String> deleteProduct(@PathVariable int id) {
         return deleteProductService.execute(id);
     }
+
+    @GetMapping("/product/search")
+    public ResponseEntity<List<ProductDTO>> searchProductByName(@RequestParam String name){
+        return searchProductService.execute(name);
+    }
+
+
 }

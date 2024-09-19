@@ -2,10 +2,13 @@ package com.example.intern.product.services;
 
 import com.example.intern.Command;
 import com.example.intern.exceptions.ProductNotFoundException;
+
 import com.example.intern.product.ProductRepository;
 import com.example.intern.product.model.Product;
 import com.example.intern.product.model.ProductDTO;
 import com.example.intern.product.model.UpdateProductCommand;
+import com.example.intern.product.validators.ProductValidator;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +26,7 @@ public class UpdateProductService implements Command<UpdateProductCommand, Produ
     @Override
     public ResponseEntity<ProductDTO> execute(UpdateProductCommand command) {
         Optional<Product> productOptional=productRepository.findById(command.getId());
+        ProductValidator.execute(command.getProduct());
         if(productOptional.isPresent()){
             Product product=command.getProduct();
             product.setId(command.getId());
