@@ -1,4 +1,4 @@
-package com.example.intern.product;
+package com.example.intern;
 
 import org.springframework.http.ResponseEntity;
 
