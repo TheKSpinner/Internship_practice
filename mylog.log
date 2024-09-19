@@ -1,0 +1,34 @@
+2024-09-19T23:44:25.884+03:00  INFO 27676 --- [intern] [main] com.example.intern.InternApplication     : Starting InternApplication using Java 20.0.1 with PID 27676 (C:\Users\alexa\Documents\intern\target\classes started by Alex in C:\Users\alexa\Documents\intern)
+2024-09-19T23:44:25.887+03:00  INFO 27676 --- [intern] [main] com.example.intern.InternApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-09-19T23:44:26.843+03:00  INFO 27676 --- [intern] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-19T23:44:26.898+03:00  INFO 27676 --- [intern] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
+2024-09-19T23:44:27.418+03:00  INFO 27676 --- [intern] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-19T23:44:27.433+03:00  INFO 27676 --- [intern] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-19T23:44:27.433+03:00  INFO 27676 --- [intern] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-19T23:44:27.508+03:00  INFO 27676 --- [intern] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-19T23:44:27.508+03:00  INFO 27676 --- [intern] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1566 ms
+2024-09-19T23:44:27.634+03:00  INFO 27676 --- [intern] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-19T23:44:28.043+03:00  INFO 27676 --- [intern] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18dcb8a7
+2024-09-19T23:44:28.045+03:00  INFO 27676 --- [intern] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-19T23:44:28.094+03:00  INFO 27676 --- [intern] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-19T23:44:28.148+03:00  INFO 27676 --- [intern] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.0.Final
+2024-09-19T23:44:28.236+03:00  INFO 27676 --- [intern] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-19T23:44:28.678+03:00  INFO 27676 --- [intern] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-19T23:44:28.793+03:00  INFO 27676 --- [intern] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasourcenull]
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-09-19T23:44:29.650+03:00  INFO 27676 --- [intern] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-19T23:44:29.654+03:00  INFO 27676 --- [intern] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-19T23:44:29.985+03:00  WARN 27676 --- [intern] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-19T23:44:30.398+03:00  INFO 27676 --- [intern] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-09-19T23:44:30.410+03:00  INFO 27676 --- [intern] [main] com.example.intern.InternApplication     : Started InternApplication in 5.089 seconds (process running for 5.871)
+2024-09-19T23:44:32.187+03:00  INFO 27676 --- [intern] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-19T23:44:32.188+03:00  INFO 27676 --- [intern] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-19T23:44:32.190+03:00  INFO 27676 --- [intern] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-09-19T23:44:32.245+03:00  INFO 27676 --- [intern] [http-nio-8080-exec-1] c.e.i.p.services.GetProductService       : Executing class com.example.intern.product.services.GetProductServiceinput: 8
+2024-09-19T23:44:32.321+03:00 ERROR 27676 --- [intern] [http-nio-8080-exec-1] c.e.i.e.ProductNotFoundException         : Exception class com.example.intern.exceptions.ProductNotFoundException thrown

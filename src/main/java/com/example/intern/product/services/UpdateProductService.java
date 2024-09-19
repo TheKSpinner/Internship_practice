@@ -9,6 +9,7 @@ import com.example.intern.product.model.ProductDTO;
 import com.example.intern.product.model.UpdateProductCommand;
 import com.example.intern.product.validators.ProductValidator;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,8 @@ import java.util.Optional;
 
 @Service
 public class UpdateProductService implements Command<UpdateProductCommand, ProductDTO> {
+
+
 
     private final ProductRepository productRepository;
 
