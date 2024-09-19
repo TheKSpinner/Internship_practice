@@ -1,6 +1,7 @@
 package com.example.intern.product.services;
 
 import com.example.intern.Query;
+import com.example.intern.exceptions.ProductNotFoundException;
 import com.example.intern.product.ProductRepository;
 import com.example.intern.product.model.Product;
 import com.example.intern.product.model.ProductDTO;
@@ -28,7 +29,6 @@ public class GetProductService implements Query<Integer, ProductDTO> {
         {
             return ResponseEntity.status(OK).body(new ProductDTO(product.get()));
         }
-        //throw exception if not present
-        return null;
+        throw new ProductNotFoundException();
     }
 }

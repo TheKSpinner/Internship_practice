@@ -1,6 +1,7 @@
 package com.example.intern.product.services;
 
 import com.example.intern.Command;
+import com.example.intern.exceptions.ProductNotFoundException;
 import com.example.intern.product.ProductRepository;
 import com.example.intern.product.model.Product;
 import com.example.intern.product.model.ProductDTO;
@@ -28,6 +29,6 @@ public class UpdateProductService implements Command<UpdateProductCommand, Produ
             productRepository.save(product);
             return ResponseEntity.ok(new ProductDTO(product));
         }
-        return null;
+        throw new ProductNotFoundException();
     }
 }
