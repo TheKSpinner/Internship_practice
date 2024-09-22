@@ -28,15 +28,15 @@ public class GetProductServiceTest {
     private GetProductService getProductService;
 
     @BeforeEach //thing we need before the test runs to set up properly
-    public void setup(){
+    public void setup() {
         //initializes the repository & the service class
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    public void given_produc_exists_when_get_product_service_return_product_dto(){
+    public void given_produc_exists_when_get_product_service_return_product_dto() {
         //give
-        Product product=new Product();
+        Product product = new Product();
         product.setId(1);
         product.setName("Pixel");
         product.setDescription("Un telefon extraordinar de bun!!!!!!!");
@@ -46,20 +46,20 @@ public class GetProductServiceTest {
         //when
         ResponseEntity<ProductDTO> response = getProductService.execute(1);
         //then
-        assertEquals(ResponseEntity.ok(new ProductDTO(product)),response);
+        assertEquals(ResponseEntity.ok(new ProductDTO(product)), response);
         //asserts the product repository was only called once
-        verify(productRepository,times(1)).findById(1);
+        verify(productRepository, times(1)).findById(1);
 
     }
 
     @Test
-    public void given_product_does_not_exist_when_get_product_service_throw_product_not_found_exception(){
+    public void given_product_does_not_exist_when_get_product_service_throw_product_not_found_exception() {
         //Given
         when(productRepository.findById(1)).thenReturn(Optional.empty());
 
         //When & Then
         assertThrows(ProductNotFoundException.class, () -> getProductService.execute(1));
-        verify(productRepository,times(1)).findById(1);
+        verify(productRepository, times(1)).findById(1);
     }
 
 }
